@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unit 1 • Egypt–Africa Cooperation • Mini Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="unit-title">
+      <span class="badge">Term 1</span>
+      <h1>Unit 1: Egypt–Africa Cooperation</h1>
+      <p class="subtitle">Interactive Mini Platform • <span id="author"></span></p>
+    </div>
+    <div class="controls">
+      <button id="btnSettings" class="ghost">⚙️ Settings</button>
+    </div>
+  </header>
+
+  <nav class="unit-tabs" role="tablist" aria-label="Unit tabs">
+    <button class="tab active" data-tab="lesson1">Lesson 1</button>
+    <button class="tab" data-tab="lesson2">Lesson 2</button>
+    <button class="tab" data-tab="lesson3">Lesson 3</button>
+    <button class="tab" data-tab="lesson4">Lesson 4</button>
+    <button class="tab exam" data-tab="unitExam">Unit Exam</button>
+  </nav>
+
+  <main>
+    <div id="panelContainer"></div>
+  </main>
+
+  <footer class="app-footer">
+    <small>© 2025 • Mini Platform for teaching • Works offline (single HTML, CSS & JS).</small>
+  </footer>
+
+  <dialog id="dlgSettings">
+    <form method="dialog">
+      <h3>Settings</h3>
+      <label><input type="checkbox" id="chkSound" checked> Enable sounds</label>
+      <label><input type="checkbox" id="chkConfetti" checked> Enable confetti</label>
+      <label>Speech rate (slow ← 0.8 … 1.1 → fast)
+        <input type="range" min="0.8" max="1.1" step="0.05" id="rngRate" value="0.9" />
+      </label>
+      <label>Voice preference
+        <select id="selVoice"></select>
+      </label>
+      <menu>
+        <button value="cancel" class="ghost">Close</button>
+        <button id="btnSaveSettings" value="default">Save</button>
+      </menu>
+      <p class="note">Tip: Install a British English (en-GB) voice on the device for best offline speech.</p>
+    </form>
+  </dialog>
+
+  <template id="tplLesson">
+    <section class="lesson">
+      <h2></h2>
+      <nav class="lesson-tabs">
+        <button class="ltab active" data-sub="vocab">1) Vocabulary</button>
+        <button class="ltab" data-sub="games">2) Games</button>
+        <button class="ltab" data-sub="reading">3) Reading</button>
+        <button class="ltab exam" data-sub="exam">4) Exam</button>
+      </nav>
+      <div class="lesson-panels">
+        <div class="subpanel vocab"></div>
+        <div class="subpanel games hidden"></div>
+        <div class="subpanel reading hidden"></div>
+        <div class="subpanel exam hidden"></div>
+      </div>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
